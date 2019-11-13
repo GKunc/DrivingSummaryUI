@@ -1,0 +1,23 @@
+<form>
+  <div *ngIf="email.errors">
+    <label style="color: red">Email address not valid</label>
+  </div>
+  <label class="label-creator">Email</label>
+  <br/>
+  <input class="input-creator" type="text" ngModel="" name="email" email #email="ngModel"/>
+  <br/>
+
+  <label class="label-creator">File Name</label>
+  <br/>
+  <input class="input-creator"/>
+  <br/>
+
+  <label class="label-creator">Start Date</label>
+  <br/>
+  <input class="input-creator" type="date" [(ngModel)]="startDate" name="date" ngDefaultControl
+          (ngModelChange)="startDate = $event"/>
+  <br/>
+  <br/>
+
+  <button class="btn-creator" [routerLink]="['/email-sender', startDate]">Send</button>
+</form>
